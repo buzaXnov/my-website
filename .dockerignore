@@ -1,0 +1,22 @@
+# Exclude certain directories from the docker build context.
+# We don't want them to be added to the context because it makes
+# building the image faster and copying the files to the image faster.
+
+# Git
+.git
+.gitignore
+
+# Docker
+.docker
+
+# Python
+app/__pycache__/
+app/*/__pycache__/
+app/*/*/__pycache__/
+app/*/*/*/__pycache__/
+.env/
+.venv/
+venv/
+
+# Local PostgreSQL data
+data/
