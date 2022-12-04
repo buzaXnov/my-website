@@ -1,4 +1,4 @@
-version: 3.9
+version: "3.9"
 services:
   app:
     build:
@@ -7,3 +7,19 @@ services:
       - "8000:8000"
     volumes:
       - ./app:/app
+    environment:
+      - SECRET_KEY=filipbutic
+      - DEBUG=1
+      - DB_HOST=db
+      - DB_NAME=devdb
+      - DB_USER=devuser
+      - DB_PASSWORD=password
+    depends_on: # the db should start before this service and there
+      - db      # should be a network connection between them
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=devdb
+      - POSTGRES_USER=devuser
+      - POSTGRES_PASSWORD=password
