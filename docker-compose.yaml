@@ -3,6 +3,11 @@ services:
   app:
     build:
       context: .
+    # firstly wait for the db, then do migrations i.e. any new changes will be applied, then run the server
+    command: >
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"
     volumes:
