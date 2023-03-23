@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Canvas Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <head>A brajo nedljet</head>
   <style>
-    canvas {
-      border: 1px solid black;
+    #canvas {
+      border: 2px solid black;
+      display: block;
+      margin: auto;
+      z-index: 9;
+      position: absolute;
+    }
+
+    #particles-js {
+      width: 100%;
+      height: 100%;
+      background-color: #000000;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
     }
   </style>
 </head>
+
 <body>
-  <canvas id="canvas" width="400" height="400"></canvas>
+  <!-- <h1 style="text-align: center;">Draw a symbol</h1> -->
+  <div id="particles-js" width="100%" height="100%"></div>
+  <script text="text/javascript" src="particles.js"></script>
+  <!-- TODO: check if you need to add statc/particles.js -->
+
+  <canvas id="canvas" width="500" height="500"></canvas>
   <script>
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
     var drawing = false;
     var strokes = [];
 
-    canvas.addEventListener('mousedown', function(e) {
-      if(!drawing) {
+    canvas.addEventListener('mousedown', function (e) {
+      if (!drawing) {
         // Clear the canvas when the mouse if clicked for a new symbol to be drawn
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.beginPath();
@@ -29,7 +52,7 @@
       strokes.push([e.offsetX, e.offsetY]);
     });
 
-    canvas.addEventListener('mousemove', function(e) {
+    canvas.addEventListener('mousemove', function (e) {
       if (drawing) {
         ctx.beginPath();
         ctx.moveTo(strokes[strokes.length - 1][0], strokes[strokes.length - 1][1]);
@@ -39,13 +62,13 @@
       }
     });
 
-    canvas.addEventListener('mouseup', function(e) {
+    canvas.addEventListener('mouseup', function (e) {
       drawing = false;
       // Send the strokes data to the server for recognition
       var xhr = new XMLHttpRequest();
       xhr.open('POST', '/recognize');
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.onload = function() {
+      xhr.onload = function () {
         if (xhr.status === 200) {
           alert(xhr.responseText);
         } else {
@@ -55,6 +78,12 @@
       xhr.send('strokes=' + JSON.stringify(strokes));
       strokes = [];
     });
+
+    particlesJS.load('particles-js', 'particles.json', function () {
+      console.log('loaded successfully');
+    });
   </script>
+
 </body>
+
 </html>
