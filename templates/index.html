@@ -5,36 +5,18 @@
   <title>Canvas Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 
-  <head>A brajo nedljet</head>
-  <style>
-    #canvas {
-      border: 2px solid black;
-      display: block;
-      margin: auto;
-      z-index: 9;
-      position: absolute;
-    }
-
-    #particles-js {
-      width: 100%;
-      height: 100%;
-      background-color: #000000;
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-    }
-  </style>
 </head>
 
 <body>
-  <!-- <h1 style="text-align: center;">Draw a symbol</h1> -->
-  <div id="particles-js" width="100%" height="100%"></div>
+  <h1 id="title">Draw a symbol</h1>
+  <div id="particles-js"></div>
   <script text="text/javascript" src="particles.js"></script>
-  <!-- TODO: check if you need to add statc/particles.js -->
 
-  <canvas id="canvas" width="500" height="500"></canvas>
+  <canvas id="canvas" width="600" height="600"></canvas>
+  <canvas id="scroll-canvas"></canvas>
+  <h2 id="prediction">Predicted symbol is (((SYMBOL)))</h2>
   <script>
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
