@@ -28,7 +28,7 @@ canvas.addEventListener('mouseup', function (e) {
     drawing = false;
     // Send the strokes data to the server for recognition
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/recognize');
+    xhr.open('POST', '/greek-symbols');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
         if (xhr.status === 200) {
@@ -41,6 +41,7 @@ canvas.addEventListener('mouseup', function (e) {
     strokes = [];
 });
 
-particlesJS.load('particles-js', 'particles.json', function () {
-    console.log('loaded successfully');
-});
+// Commented so that every page can load the particles.js script and have it as the background. 
+// particlesJS.load('particles-js', 'particles.json', function () {
+//     console.log('loaded successfully');
+// });
