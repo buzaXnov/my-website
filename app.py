@@ -11,18 +11,21 @@ def recognize_symbol():
 
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    return render_template('home.html')
 
 
-@app.route('/recognize', methods=['POST'])
+@app.route('/greek-symbols', methods=['POST', 'GET'])
 def greek_symbols():
-    # Retrieve the coordinates of the strokes from the request data
-    strokes = request.form['strokes']
-    # TODO: Pass the strokes to your trained neural network for recognition
-    # and return the results
-    results = recognize_symbol()
-    return strokes
+    if request.method == 'GET':
+        return render_template('greek_symbols.html')
+    elif request.method == 'POST':
+        # Retrieve the coordinates of the strokes from the request data
+        strokes = request.form['strokes']
+        # TODO: Pass the strokes to your trained neural network for recognition
+        # and return the results
+        results = recognize_symbol()
+        return strokes
 
 
 if __name__ == '__main__':
