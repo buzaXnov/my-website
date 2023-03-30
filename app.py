@@ -17,8 +17,6 @@ def recognize_symbol(strokes, model):
     strokes = preprocess_symbol_vector(strokes)
     result = model.predict(torch.tensor(strokes[None, ...]))
 
-    # TODO: predikcija da vraca indeks simbola, a ne simbol
-
     return symbols[result.item()]
 
 
