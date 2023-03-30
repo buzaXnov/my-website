@@ -1,5 +1,7 @@
 import ast
 import torch
+import ast
+import torch
 from flask import Flask, render_template, request, url_for
 from utils.model import preprocess_symbol_vector, load_model
 
@@ -13,8 +15,6 @@ def recognize_symbol(strokes, model):
     """Recognize the symbol from the given strokes."""
     symbols = ['alpha', 'beta', 'gamma', 'delta', 'epsilon']
     strokes = preprocess_symbol_vector(strokes)
-    print(strokes.shape)
-    print(torch.tensor(strokes))
     result = model.predict(torch.tensor(strokes[None, ...]))
 
     # TODO: predikcija da vraca indeks simbola, a ne simbol
