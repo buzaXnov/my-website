@@ -1,8 +1,22 @@
+html, body {
+  overflow: auto;
+}
+
+#particles-js {
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 #title {
   text-align: center;
   color: white;
-  z-index: 2;
-  position: fixed;
+  position: absolute;
+  top: 100px;
   right: 0;
   left: 0;
 }
@@ -13,14 +27,13 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
-  z-index: 2;
-  position: fixed;
+  position: absolute;
   right: 0;
   left: 0;
 }
 
 #scroll-canvas {
-  z-index: 1;
+  z-index: -1;
   margin-left: auto;
   margin-right: auto;
   position: fixed;
@@ -28,7 +41,7 @@
   left: 0;
   top: 0;
   background-color: grey;
-  width: 1000px;
+  width: 1200px;
   height: 100%;
   opacity: 50%;
 }
@@ -36,34 +49,36 @@
 #prediction {
   text-align: center;
   color: white;
-  z-index: 2;
-  position: fixed;
+  position: absolute;
   top: 725px;
   right: 0;
   left: 0;
 }
 
-#particles-js {
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-#model-links {
-  /* display: block; */
-  position: fixed;
-  top: calc(50% + 1em);
+#model-choice {
+  display: block;
+  position: absolute;
+  top: 850px;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
   padding: 0;
   list-style: none;
-  z-index: 1;
-  /* color: white; */
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#model-links {
+  display: block;
+  position: absolute;
+  top: 1000px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 #model-links li {
   margin: 1em;
@@ -74,11 +89,58 @@
   padding: 0.5em 1em;
   text-decoration: none;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-align: center;
   border-radius: 0.25em;
   transition: 0.25s;
+}
+
+#resume-section {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 200px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  /* top: 500px; */
+  /* align-items: center; */
+  /* margin: 2em 0; */
+}
+
+#resume-image {
+  padding: 0 1em;
+}
+
+#resume-image img {
+  /* max-width: 100%; */
+  /* height: 500px; */
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#resume-text {
+  flex-basis: 50%;
+  padding: 0 1em;
+  color: #FFF;
+}
+
+#resume-text h2 {
+  font-size: 1.5em;
+  margin-top: 10;
+}
+
+#resume-text ul {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+#resume-text li {
+  margin-bottom: 1em;
 }

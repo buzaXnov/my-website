@@ -4,26 +4,44 @@
 <head>
   <title>Homepage</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
 <body>
-  <canvas id="scroll-canvas"></canvas>
+    <canvas id="scroll-canvas"></canvas>
 
-  <h1 id="title">Welcome to My Website!</h1>
-  <p>Please choose one of the following models:</p>
-  <ul id="model-links">
-    <li><a href="{{ url_for('greek_symbols') }}">Greek Symbol Recognition</a></li>
-    <li><a href="#">Other Model 1</a></li>
-    <li><a href="#">Other Model 2</a></li>
-    <!-- Add more links to other models as needed -->
-  </ul>
+    <h1 id="title">Welcome to My Website!</h1>
+
+    <div id="resume-section">
+      <div id="resume-image">
+        <img src="{{ url_for('static', filename='me.jpg') }}" alt="Resume Image">
+      </div>
+      <div id="resume-text">
+        <h2>Work Experience</h2>
+        <ul>
+          <li>Job 1</li>
+          <li>Job 2</li>
+        </ul>
+        <h2>Education</h2>
+        <ul>
+          <li>Degree 1</li>
+          <li>Degree 2</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="model-choice">Pick one of the following models:</h2>
+    <ul id="model-links">
+      <li><a href="{{ url_for('greek_symbols') }}">Greek Symbol Recognition</a></li>
+      <li><a href="#">Other Model 1</a></li>
+      <li><a href="#">Other Model 2</a></li>
+      <!-- Add more links to other models as needed -->
+    </ul>
 
   <div id="particles-js"></div>
   <script text="text/javascript" src="{{ url_for('static', filename='particles.js') }}"></script>
-
 </body>
 
 </html>
