@@ -10,35 +10,50 @@
 </head>
 
 <body>
-    <canvas id="scroll-canvas"></canvas>
+  <canvas id="scroll-canvas"></canvas>
 
-    <h1 id="title">Welcome to My Website!</h1>
+  <h1 id="title">Welcome to My Website!</h1>
 
-    <div id="resume-section">
-      <div id="resume-image">
-        <img src="{{ url_for('static', filename='me.jpg') }}" alt="Resume Image">
-      </div>
-      <div id="resume-text">
-        <h2>Work Experience</h2>
-        <ul>
-          <li>Job 1</li>
-          <li>Job 2</li>
-        </ul>
-        <h2>Education</h2>
-        <ul>
-          <li>Degree 1</li>
-          <li>Degree 2</li>
-        </ul>
-      </div>
+  <div id="resume-section">
+    <div id="resume-image">
+      <img src="{{ url_for('static', filename='me.jpg') }}" alt="Resume Image">
     </div>
+    <div id="resume-text">
+      <h2>Education</h2>
+      <ul>
+        <li style="font-weight: bold;">Master's Degree in Computer Science</li>
+        <li>Faculty of Electrical Engineering and Computing in Zagreb</li>
+        <li style="font-weight: bold;">Bachelor's Degree in Computer Science</li>
+        <li>Faculty of Electrical Engineering, Mechanical Engineering and Naval Architecture in Split</li>
+        <br>
+      </ul>
+      <h2>Work Experience</h2>
+      <ul>
+        <li>Data Scientist @ AISoft Technology</li>
+        <p>Insert what you did brayo</p>
+        <li>Machine Learning Engineer @ Biss</li>
+        <p>Insert what you did brayo</p>
+      </ul>
+    </div>
+  </div>
 
-    <h2 id="model-choice">Pick one of the following models:</h2>
-    <ul id="model-links">
-      <li><a href="{{ url_for('greek_symbols') }}">Greek Symbol Recognition</a></li>
-      <li><a href="#">Other Model 1</a></li>
-      <li><a href="#">Other Model 2</a></li>
-      <!-- Add more links to other models as needed -->
+  <h2 id="model-choice">Interact with one of the following models:</h2>
+  <ul id="model-links">
+    <li><a href="{{ url_for('greek_symbols') }}">Greek Symbol Recognition</a></li>
+    <li><a href="#">Other Model 1</a></li>
+    <li><a href="#">Other Model 2</a></li>
+    <!-- Add more links to other models as needed -->
+  </ul>
+
+  <div id="contact-section">
+    <h3>Contact Me</h3>
+    <ul>
+      <li><a href="mailto:filip1701@gmail.com">Email</a></li>
+      <li><a href="https://github.com/buzaXnov">Github</a></li>
+      <li><a href="https://www.linkedin.com/in/filip-buti%C4%87/">LinkedIn</a></li>
     </ul>
+
+  </div>
 
   <div id="particles-js"></div>
   <script text="text/javascript" src="{{ url_for('static', filename='particles.js') }}"></script>
