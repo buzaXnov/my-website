@@ -1,8 +1,6 @@
 import ast
 import torch
-import ast
-import torch
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request
 from utils.model import preprocess_symbol_vector, load_model
 
 app = Flask(__name__,
@@ -34,14 +32,20 @@ def greek_symbols():
     elif request.method == 'POST':
         # Retrieve the coordinates of the strokes from the request data
         strokes = request.form['strokes']
-        
+
         strokes = ast.literal_eval(strokes)
 
-        return recognize_symbol(strokes, model)
+        return f"Predicted symbol is {recognize_symbol(strokes, model)}"
+
+        # return render_template('greek_symbols.html', symbol=symbol)
+
+
+@app.route('/greek-feedback', methods=['POST'])
+def greek_feedback():
+    feedback = request.get_json().get('feedback')
+    # TODO: Do something with the feedback data, such as store it in a database
+    return 'Feedback received'
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-# turn this string of a list of lists into a list of lists with floats; give me a func for that
-

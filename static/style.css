@@ -16,7 +16,7 @@ html, body {
   text-align: center;
   color: white;
   position: absolute;
-  top: 100px;
+  top: 0px;
   right: 0;
   left: 0;
 }
@@ -58,7 +58,7 @@ html, body {
 #model-choice {
   display: block;
   position: absolute;
-  top: 850px;
+  top: 1000px;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
@@ -73,7 +73,7 @@ html, body {
 #model-links {
   display: block;
   position: absolute;
-  top: 1000px;
+  top: 1150px;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
@@ -102,7 +102,7 @@ html, body {
   position: absolute;
   right: 0;
   left: 0;
-  top: 200px;
+  top: 100px;
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -143,4 +143,59 @@ html, body {
 
 #resume-text li {
   margin-bottom: 1em;
+}
+
+#contact-section {
+  position: absolute;
+  color: white;
+  right: 0px;
+  left: 450px;
+  top: 1300px;
+  /* bottom: 0px; */
+  width: 1500px;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+#contact-section h3 {
+  font-size: 1.5em;
+  margin-top: 10;
+}
+
+/* TODO: Remove the tab under contact on the list and insert the appropriate links and references */
+
+#contact-section ul{
+  font-size: 1.5em;
+  margin-top: 0px;
+  padding-bottom: 50px;
+  list-style: none;
+  position: absolute;
+  color: white;
+  /* right: 0px; */
+  left: -40px;
+}
+
+#feedback-buttons {
+  position: absolute;
+  top: 325px;
+  right: 500px;
+}
+
+#correct-button,
+#incorrect-button {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100px;
+  border-radius: 12px;
+}
+
+#incorrect-button {
+  margin-top: 50px;
+  background-color: #f44336;
 }

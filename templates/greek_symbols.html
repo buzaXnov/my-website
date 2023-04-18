@@ -11,11 +11,16 @@
 </head>
 
 <body>
-  <h1 id="title">Draw a symbol</h1>
-  <h2 id="prediction">Predicted symbol is (((SYMBOL)))</h2>
+  <h1 id="title">Draw a Greek alphabetical symbol</h1>
+  <!-- <h2 id="prediction">Predicted symbol is {{ symbol }}</h2> -->
 
   <canvas id="scroll-canvas"></canvas>
   <canvas id="canvas" width="600" height="600"></canvas>
+
+  <div id="feedback-buttons">
+    <button id="correct-button">Correct</button>
+    <button id="incorrect-button">Incorrect</button>
+  </div>
 
   <div id="particles-js"></div>
   <script text="text/javascript" src="{{ url_for('static', filename='particles.js') }}"></script>
