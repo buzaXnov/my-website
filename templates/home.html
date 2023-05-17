@@ -12,13 +12,17 @@
 <body>
   <canvas id="scroll-canvas"></canvas>
 
-  <h1 id="title">Welcome to My Website!</h1>
+  <h1 id="title">Welcome to My Portfolio Website!</h1>
 
   <div id="resume-section">
-    <div id="resume-image">
-      <img src="{{ url_for('static', filename='me.jpg') }}" alt="Resume Image">
-    </div>
+    <!-- <div id="resume-image">
+      <img src="{{ url_for('static', filename='me.jpeg') }}" alt="Resume Image">
+    </div> -->
     <div id="resume-text">
+      <h3>NOTE: Site will be continously updated. Click on the background in the meantime.</h3>
+      <h2>About Me</h2>
+      <p>My name is Filip Butić and I am a Data Scientist with a background in Computer Science. I have experience in building machine learning models for various applications, including anomaly detection, automatic license plate recognition, and crowd management. I am also interested in computer vision and natural language processing as well as data science. I am currently looking for new opportunities to further develop my skills and contribute to exciting projects.</p>
+
       <h2>Education</h2>
       <ul>
         <li style="font-weight: bold;">Master's Degree in Computer Science</li>
@@ -29,19 +33,23 @@
       </ul>
       <h2>Work Experience</h2>
       <ul>
-        <li>Data Scientist @ AISoft Technology</li>
-        <p>Insert what you did brayo</p>
-        <li>Machine Learning Engineer @ Biss</li>
-        <p>Insert what you did brayo</p>
+        <li style="font-weight: bold;">Data Scientist @ AISoft Technology [Current position]</li>
+        <p>As a data scientist, I trained machine learning models for anomaly detection using PCAP files, a format for network traffic captures. I retrieved, parsed, and stored large volumes of data for training and testing purposes. Once the models were ready, I deployed them to a production environment to enable automated detection and alerting of network anomalies. I also collaborated with cross-functional teams to improve model performance and scalability. Finally, I maintained and monitored the deployed models to ensure their continued effectiveness.</p>
+        <li style="font-weight: bold;">Machine Learning Engineer @ Biss</li>
+        <p>As a Machine Learning Engineer, I worked on communicating with clients to understand their requirements for PoCs and existing systems. I was responsible for preprocessing and augmenting data, building data pipelines and models, as well as visualizing data. Additionally, I built backends for various systems, including real-time Automatic License Plate Recognition (ALPR), crowd management, and demographics prediction systems. Through these projects, I gained experience in deploying machine learning models in real-world applications and working collaboratively with cross-functional teams to meet project goals.</p>
       </ul>
+
+      <div id="resume-download">
+        <h3>Download my Resume</h3>
+        <a href="{{ url_for('static', filename='Filip_Butic_Resume.pdf') }}" download="Filip_Butic_Resume.pdf" class="download-button">Download</a>
+      </div>
     </div>
   </div>
 
   <h2 id="model-choice">Interact with one of the following models:</h2>
   <ul id="model-links">
     <li><a href="{{ url_for('greek_symbols') }}">Greek Symbol Recognition</a></li>
-    <li><a href="#">Other Model 1</a></li>
-    <li><a href="#">Other Model 2</a></li>
+    <li><a href="#">Other Models Coming Soon!</a></li>
     <!-- Add more links to other models as needed -->
   </ul>
 
