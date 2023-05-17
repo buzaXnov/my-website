@@ -4,7 +4,8 @@ import numpy as np
 from itertools import combinations
 
 # # Device configuration
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = 'cpu'
 
 # Fully connected neural network with one hidden layer
 class NeuralNet(nn.Module):
@@ -59,7 +60,8 @@ def load_model():
 
     checkpoint = torch.load(PATH)
 
-    model = NeuralNet(input_size, hidden_size, num_classes).eval()
+    model = NeuralNet(input_size, hidden_size, num_classes).cpu()
+    model.eval()
     model.load_state_dict(checkpoint['model_state_dict'])
 
     return model
